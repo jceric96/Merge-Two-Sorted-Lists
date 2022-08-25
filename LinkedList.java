@@ -16,16 +16,13 @@ public class LinkedList {
             }
             curr = curr.next;
         }
-        while (head2 != null) {
-            curr.next = new ListNode(head2.val);
-            head2 = head2.next;
-            curr = curr.next;
+
+        if (head1 == null) {
+            curr.next = head2;
+        } else if (head2 == null) {
+            curr.next = head1;
         }
-        while (head1 != null) {
-            curr.next = new ListNode(head1.val);
-            head1 = head1.next;
-            curr = curr.next;
-        }
+
         return dummy.next;
     }
 
